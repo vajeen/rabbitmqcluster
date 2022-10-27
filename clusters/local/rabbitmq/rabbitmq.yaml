@@ -8,7 +8,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: rabbitmq
-  namespace: queue
+  namespace: flux-system
 spec:
   interval: 1m
   url: https://github.com/vajeen/helm
@@ -29,8 +29,7 @@ metadata:
   namespace: queue
 spec:
   interval: 1m
-  chart: ./charts/rabbitmq
+  chart: ./rabbitmq
   sourceRef:
     name: rabbitmq
     kind: GitRepository
-    
