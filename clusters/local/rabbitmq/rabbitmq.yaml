@@ -29,7 +29,9 @@ metadata:
   namespace: queue
 spec:
   interval: 1m
-  chart: rabbitmq
-  sourceRef:
-    name: rabbitmq
-    kind: GitRepository
+  chart:
+    spec:
+      chart: rabbitmq
+      sourceRef:
+        name: rabbitmq
+        kind: GitRepository
