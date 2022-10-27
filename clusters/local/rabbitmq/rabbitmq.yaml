@@ -14,22 +14,23 @@ spec:
   url: https://github.com/vajeen/helm
   ref:
     branch: main
-#  ignore: |
-#    # exclude all
-#    /*
-#    # include rabbitmq dir
-#    !/charts/rabbitmq
-#    # exclude README from rabbitmq dir
-#    /charts/rabbitmq/**/*.md
-#---
-#apiVersion: helm.toolkit.fluxcd.io/v2beta1
-#kind: HelmRelease
-#metadata:
-#  name: rabbitmq
-#  namespace: queue
-#spec:
-#  interval: 5m
-#  chart:
-#    git: git@github.com:Flowsystem/oneflow-iac-modules.git
-#    ref: master
-#    path: charts/rabbitmq
+  ignore: |
+    # exclude all
+    /*
+    # include rabbitmq dir
+    !/charts/rabbitmq
+    # exclude README from rabbitmq dir
+    /charts/rabbitmq/**/*.md
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rabbitmq
+  namespace: queue
+spec:
+  interval: 1m
+  chart: ./charts/rabbitmq
+  sourceRef:
+    name: rabbitmq
+    kind: GitRepository
+    
