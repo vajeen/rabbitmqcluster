@@ -14,8 +14,6 @@ spec:
   url: https://github.com/vajeen/helm
   ref:
     branch: main
-  secretRef:
-    name: flux-system
   ignore: |
     # exclude all
     /*
