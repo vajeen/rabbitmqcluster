@@ -11,7 +11,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://github.com/vajeen/helm
+  url: https://github.com/vajeen/helm git@github.com:vajeen/helm.git
+
   ref:
     branch: main
   secretRef:
@@ -38,13 +39,3 @@ spec:
         name: rabbitmq
         kind: GitRepository
         namespace: flux-system
-  values:
-    affinity:
-      nodeAffinity:
-        requiredDuringSchedulingIgnoredDuringExecution:
-          nodeSelectorTerms:
-            - matchExpressions:
-                - key: eks.amazonaws.com/nodegroup
-                  operator: In
-                  values:
-                    - search
