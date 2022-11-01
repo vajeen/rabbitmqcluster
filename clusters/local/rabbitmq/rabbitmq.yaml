@@ -11,7 +11,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: https://github.com/vajeen/helm git@github.com:vajeen/helm.git
+  url: https://github.com/vajeen/helm
 
   ref:
     branch: main
